@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* optional: quick “app” polish */
+:root { color-scheme: light; }
+html, body { height: 100%; }
+body { @apply bg-gray-50 text-gray-900; }
+.container-app { @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8; }
+.card { @apply bg-white rounded-2xl shadow-soft transition hover:shadow-lg; }
+.badge { @apply inline-block text-xs font-medium rounded-full px-2.5 py-0.5; }

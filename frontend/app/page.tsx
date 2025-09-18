@@ -1,8 +1,19 @@
+import { fetchActivities } from "../lib/api";
+import ActivityGrid from "../components/ActivityGrid";
+
 export default async function Page() {
-    return (
-      <main style={{ padding: 24 }}>
-        <h1>Play Plan Generator</h1>
-        <p>Daily, developmentally-appropriate activity ideas for toddlers & infants.</p>
-      </main>
-    );
-  }
+  const activities = await fetchActivities();
+
+  return (
+    <main className="container-app py-8">
+      <section className="mb-6 text-center">
+        <h1 className="text-3xl font-bold">Today’s Play Plan</h1>
+        <p className="text-sm text-gray-600 mt-1">
+          Curated ideas by learning focus — motor skills, social skills, pretend play.
+        </p>
+      </section>
+
+      <ActivityGrid activities={activities} />
+    </main>
+  );
+}
